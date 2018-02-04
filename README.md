@@ -29,7 +29,9 @@ Following are the steps to achieve the outcome:
 [video1]: ./project_video.mp4
 
 ## 1 Data Collection: 
+
 Vehicle and Non-vehicle
+
 https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip
 https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip
 http://www.gti.ssr.upm.es/data/Vehicle_database.html
