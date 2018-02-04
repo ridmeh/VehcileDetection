@@ -4,13 +4,19 @@
 
 **Vehicle Detection**
 Just like any image detection we have option to use CNNs. This project is focused primarily use features extracted via HOG and train a Linear SVM classifier
+
 Following are the steps to achieve the outcome:
-1 Collect lot of data : in our case we collected lot of Car and Non-car images (but related to road)
-1 Analyse data: Check distribution of data. ML is all garbage in , garbage out. Quality of data is very important. 
-Hence, it is very importatn we anaylze its distribution and what features we can extract. Data should be sufficiently distributed for randomizing selection for training and testing.
-1 Features: In our case, we are recommended to use Histogram Of Oriented Gradients (HOG). Normalizing of features is very important step.
-1 Classifier : We will be using linear SVM
-1 Pipeline : Given a image, generate heat map that can be used to create bounding rectangle 
+
+*1 Collect lot of data : in our case we collected lot of Car and Non-car images (but related to road)
+
+*2 Analyse data: Check distribution of data. ML is all garbage in , garbage out. Quality of data is very important.Hence, it is very importatn we anaylze its distribution and what features we can extract. Data should be sufficiently distributed for randomizing selection for training and testing.
+
+*3 Features: In our case, we are recommended to use Histogram Of Oriented Gradients (HOG). Normalizing of features is very important step.
+
+*4 Classifier : We will be using linear SVM
+
+*5 Pipeline : Given a image, generate heat map that can be used to create bounding rectangle 
+
 
 [//]: # (Image References)
 [image1]: ./examples/car_not_car.png
