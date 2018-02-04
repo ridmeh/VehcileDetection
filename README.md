@@ -33,14 +33,30 @@ Following are the steps to achieve the outcome:
 Vehicle and Non-vehicle
 
 https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip
+
 https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip
+
 http://www.gti.ssr.upm.es/data/Vehicle_database.html
+
 http://www.cvlibs.net/datasets/kitti/
+
 https://github.com/udacity/self-driving-car/tree/master/annotations
+
 
 
 ## 2 Data Analysis: 
 Data for var
+
+
+
+## 2 Challanges:
+1. HOG Feature selection
+
+3. Timing: Getting accuracy with-in limited time.
+
+## 2 Improvements: 
+1. Sliding Window : Experiment if it can be used with other objects on road on given image. Like identify Trees, Pedestrians, Trucks etc. 
+2. Real-Time: Experiment if we can use this on real time basis. How much lag would it be before cars are getting recogonized.
 
 ### Histogram of Oriented Gradients (HOG)
 
