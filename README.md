@@ -80,6 +80,11 @@ PS: White car detection failure.
 
 ![picture](test6_h.png)
 
+Video using only 1 HOG parameter:
+
+https://youtu.be/gvHaLU1UQ40
+
+Vidoe using ALL HOG parameter:
 https://youtu.be/uamuuHZaQvo
 
 
