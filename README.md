@@ -84,7 +84,8 @@ Video using only 1 HOG parameter:
 
 https://youtu.be/gvHaLU1UQ40
 
-Vidoe using ALL HOG parameter:
+Video using ALL HOG parameter:
+
 https://youtu.be/uamuuHZaQvo
 
 
