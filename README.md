@@ -58,8 +58,25 @@ I trained the linear SVM with total of 4932 features - Spatial, Hist and HOG com
 
 Note: 4932 features did give lot of false positives , I later moved up to use 'ALL' HOG features. That bumped the # of features to 8460. Especially, cars in test4 image were not getting recogonized. After adding 'ALL' features, I could see cars getting recogonized. 
 
-*5 Pipeline : Given a image, generate heat map that can be used to create bounding rectangle 
-Created a pipeline for
+## 5 Pipeline : 
+I took the test images and generated the following heat maps and later run the video using the built pipeline.
+
+![picture](test1_h.png)
+
+![picture](test2_h.png)
+
+![picture](test3.png)
+
+PS: Due to single frame, image is not coming up in heat map.
+
+![picture](test3_h.png)
+
+
+![picture](test4_h.png)
+
+![picture](test5_h.png)
+
+![picture](test6_h.png)
 
 https://youtu.be/uamuuHZaQvo
 
@@ -71,25 +88,3 @@ https://youtu.be/uamuuHZaQvo
 ## 6 Improvements: 
 1. Sliding Window : Experiment if it can be used with other objects on road on given image. Like identify Trees, Pedestrians, Trucks etc. 
 2. Real-Time: Experiment if we can use this on real time basis. How much lag would it be before cars are getting recogonized.
-
-
----
-
-#### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
-
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
-
-Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
-
-### Here are six frames and their corresponding heatmaps:
-
-![alt text][image5]
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
-
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
-
-
-
