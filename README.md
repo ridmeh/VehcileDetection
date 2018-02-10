@@ -76,6 +76,8 @@ PS: Due to single frame, image is not coming up in heat map.
 
 ![picture](test5_h.png)
 
+PS: White car detection failure.
+
 ![picture](test6_h.png)
 
 https://youtu.be/uamuuHZaQvo
