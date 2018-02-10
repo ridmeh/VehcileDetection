@@ -41,18 +41,22 @@ pix_per_cell = 8
 cell_per_block = 2
 
 ![picture](hog_vis.png)
+
 I experimented to check find the best ones that can identify cars.
 orient = 1
 pix_per_cell = 5
 cell_per_block = 3
 
 ![picture](orient1.png)
+
 After trying various options, I prefered to use RGB and (orient = 9, pix_per_cell = 8, cell_per_block = 2) for my first run.
 
 ## 4 Classifier :
 
 We will be using linear SVM
 I trained the linear SVM with total of 4932 features - Spatial, Hist and HOG combined. Data set was randomized and split with 80/20 rule for training and testing. It achieved 98% accuracy. 
+
+Note: 4932 features did give lot of false positives , I later moved up to use 'ALL' HOG features. That bumped the # of features to 8460. Especially, cars in test4 image were not getting recogonized. After adding 'ALL' features, I could see cars getting recogonized. 
 
 *5 Pipeline : Given a image, generate heat map that can be used to create bounding rectangle 
 Created a pipeline for
