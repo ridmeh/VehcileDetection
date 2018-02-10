@@ -7,26 +7,36 @@ Just like any image detection we have option to use CNNs. This project is focuse
 
 Following are the steps to achieve the outcome:
 
-*1 Collect lot of data : in our case we collected lot of Car and Non-car images (but related to road)
+*1 Collect lot of data : in our case we collected lot of Car and Non-car images which are related to road
+
+![picture](car_nocar.png)
 
 *2 Analyse data: Check distribution of data. ML is all garbage in , garbage out. Quality of data is very important.Hence, it is very importatn we anaylze its distribution and what features we can extract. Data should be sufficiently distributed for randomizing selection for training and testing.
 
-*3 Features: In our case, we are recommended to use Histogram Of Oriented Gradients (HOG). Normalizing of features is very important step.
+![picture](normalized_feature.png)
+
+*3 Features: In our case, we are recommended to use Histogram Of Oriented Gradients (HOG). Following image was generated with HOG parameters of
+orient = 9
+pix_per_cell = 8
+cell_per_block = 2
+
+![picture](hog_vis.png)
+I experimented to check find the best ones that can identify cars.
+orient = 1
+pix_per_cell = 5
+cell_per_block = 3
+
+![picture](orient1.png)
+After trying various options, I prefered to use RGB and (orient = 9, pix_per_cell = 8, cell_per_block = 2) for my first run.
 
 *4 Classifier : We will be using linear SVM
+I trained the linear SVM with total of 4932 features - Spatial, Hist and HOG combined. Data set was randomized and split with 80/20 rule for training and testing. It achieved 98% accuracy. 
 
 *5 Pipeline : Given a image, generate heat map that can be used to create bounding rectangle 
+Created a pipeline for
 
+https://youtu.be/uamuuHZaQvo
 
-[//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
-[image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
 
 ## 1 Data Collection: 
 
@@ -66,7 +76,6 @@ The code for this step is contained in the first code cell of the IPython notebo
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-![image1]:car_nocar.png
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
